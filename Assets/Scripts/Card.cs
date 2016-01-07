@@ -1,10 +1,10 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 
 public enum Element
 {
+    All,
     Fire,
     Water,
     Lightning,
@@ -129,4 +129,25 @@ public class Card : MonoBehaviour
         found = newCardInfo.found;
     }
 
+    public static Color FindColor(Element element)
+    {
+        switch (element)
+        {
+            case Element.Earth:
+                return Color.white;
+                break;
+            case Element.Lightning:
+                return Color.yellow;
+                break;
+            case Element.Water:
+                return Color.cyan;
+                break;
+            case Element.Fire:
+                return Color.red;
+                break;
+            default:
+                return Color.white;
+                break;
+        }
+    }
 }

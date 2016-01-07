@@ -7,8 +7,6 @@ using UnityEngine.EventSystems;
 
 public class InputHandler : MonoBehaviour
 {
-    public LayerMask mask;
-
     List<RaycastResult> hits = new List<RaycastResult>();
 
     Card _cardHit;
@@ -23,6 +21,14 @@ public class InputHandler : MonoBehaviour
                 ZoomOnCard(value);
                 _cardHit = value;
             }
+        }
+    }
+
+    void Start()
+    {
+        if (CardHandler.instance)
+        {
+            CardHandler.instance.DisplayCards(CardHandler.instance.GetCards(Element.All));
         }
     }
 
@@ -56,58 +62,61 @@ public class InputHandler : MonoBehaviour
 
                 //used to show right cards per filter
 
-                #region Collection code
-
                 if (hit.gameObject.CompareTag("Filter") && Application.loadedLevelName == "Collection")
-
-
                 {
+                    GetComponent<AudioSource>().Play();
+
+                    CardHandler handler = CardHandler.instance;
+
                     switch (hit.gameObject.name)
                     {
                         case "Fire":
-                            CardHandler.instance.DisplayCards(CardHandler.instance.GetCards(Element.Fire));
+                            handler.DisplayCards(handler.GetCards(Element.Fire));
                             break;
                         case "Water":
-                            CardHandler.instance.DisplayCards(CardHandler.instance.GetCards(Element.Water));
+                            handler.DisplayCards(handler.GetCards(Element.Water));
                             break;
                         case "Earth":
-                            CardHandler.instance.DisplayCards(CardHandler.instance.GetCards(Element.Earth));
+                            handler.DisplayCards(handler.GetCards(Element.Earth));
                             break;
                         case "Lightning":
-                            CardHandler.instance.DisplayCards(CardHandler.instance.GetCards(Element.Lightning));
+                            handler.DisplayCards(handler.GetCards(Element.Lightning));
                             break;
                         case "All":
-                            List<Card> tempList = new List<Card>();
-                            foreach (KeyValuePair<string, Card> c in CardHandler.instance.cardDictionary)
-                            {
-                                tempList.Add(c.Value);
-                            }
-                            CardHandler.instance.DisplayCards(tempList.ToArray());
+                            handler.DisplayCards(handler.GetCards(Element.All));
                             break;
                     }
                     return;
                 }
-                #endregion
 
                 if (hit.gameObject.CompareTag("Filter") && Application.loadedLevelName == "Store")
                 {
+
+                    GetComponent<AudioSource>().Play();
+
+                    BoosterPack[] tempArray;
+
                     switch (hit.gameObject.name)
                     {
                         case "Fire":
-                            //show all fire boosters
-
+                            tempArray = BoosterHandler.instance.GetBoosters(Element.Fire);
+                            BoosterHandler.instance.DisplayBoosters(tempArray);
                             break;
                         case "Water":
-
+                            tempArray = BoosterHandler.instance.GetBoosters(Element.Water);
+                            BoosterHandler.instance.DisplayBoosters(tempArray);
                             break;
                         case "Earth":
-
+                            tempArray = BoosterHandler.instance.GetBoosters(Element.Earth);
+                            BoosterHandler.instance.DisplayBoosters(tempArray);
                             break;
                         case "Lightning":
-                            
+                            tempArray = BoosterHandler.instance.GetBoosters(Element.Lightning);
+                            BoosterHandler.instance.DisplayBoosters(tempArray);                            
                             break;
                         case "All":
-
+                            tempArray = BoosterHandler.instance.allBoosters.ToArray();
+                            BoosterHandler.instance.DisplayBoosters(tempArray);
                             break;
                     }
                     return;
@@ -116,6 +125,7 @@ public class InputHandler : MonoBehaviour
                 if (hit.gameObject.CompareTag("StoreButton"))
                 {
                     //make camera fade to black
+                    GetComponent<AudioSource>().Play();
 
                     Application.LoadLevel("Store");
                     return;
@@ -123,6 +133,8 @@ public class InputHandler : MonoBehaviour
 
                 if (hit.gameObject.CompareTag("CollectionButton"))
                 {
+                    GetComponent<AudioSource>().Play();
+
                     Application.LoadLevel("Collection");
                     return;
                 }
@@ -130,6 +142,30 @@ public class InputHandler : MonoBehaviour
                 if (hit.gameObject.CompareTag("Background") && Application.loadedLevelName == "Collection")
                 {
                     CardHandler.instance.UnsetLargeCard();
+                    return;
+                }
+                if (hit.gameObject.CompareTag("Background"))
+                {
+                    return;
+                }
+                if (hit.gameObject.CompareTag("Booster"))
+                {
+                    if (!hit.gameObject.GetComponent<BoosterPack>())
+                    {
+                        if (CardHandler.instance.money > hit.gameObject.transform.parent.GetComponent<BoosterPack>().cost)
+                        {
+                            CardHandler.instance.money -= hit.gameObject.transform.parent.GetComponent<BoosterPack>().cost;
+                            hit.gameObject.SendMessageUpwards("GenerateRandomCards");
+                        }
+                    }
+                    else
+                    {
+                        if (CardHandler.instance.money > hit.gameObject.transform.parent.GetComponent<BoosterPack>().cost)
+                        {
+                            CardHandler.instance.money -= hit.gameObject.GetComponent<BoosterPack>().cost;
+                            hit.gameObject.GetComponent<BoosterPack>().GenerateRandomCards();
+                        }
+                    }
                     return;
                 }
             }

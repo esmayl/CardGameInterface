@@ -100,4 +100,24 @@
     <Rarity>Common</Rarity>
     <CardName>Card9</CardName>
   </Cards>
+  <Cards>
+    <iconSmallName>SmallIcon</iconSmallName>
+    <iconMediumName>MediumIcon</iconMediumName>
+    <iconLargeName>LargeIcon</iconLargeName>
+    <ElementType>Lightning</ElementType>
+    <CardCost>1,25</CardCost>
+    <CardText>fdfgjdfdfhbdg</CardText>
+    <Rarity>Special</Rarity>
+    <CardName>Card10</CardName>
+  </Cards>
+  <Cards>
+    <iconSmallName>SmallIcon</iconSmallName>
+    <iconMediumName>MediumIcon</iconMediumName>
+    <iconLargeName>LargeIcon</iconLargeName>
+    <ElementType>Water</ElementType>
+    <CardCost>1,25</CardCost>
+    <CardText>fdfgjdfdfhbdg</CardText>
+    <Rarity>Special</Rarity>
+    <CardName>Card11</CardName>
+  </Cards>
 </XMLTemplate>

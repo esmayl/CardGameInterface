@@ -1,12 +1,14 @@
 ﻿using System.Xml.Serialization;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UIElements;
 
 public class XMLTemplate
 {
     [XmlElement(ElementName = "Cards")]public List<CardTemplate> cards;
 }
 
-public class CardTemplate
+public class CardTemplate: ScriptableObject
 {
     [XmlElement(ElementName = "iconSmallName")]public string iconSmallName;
     [XmlElement(ElementName = "iconMediumName")]public string iconMediumName;

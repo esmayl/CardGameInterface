@@ -78,7 +78,7 @@ public class BoosterHandler : MonoBehaviour
     {
         boosterCards = cardsToDisplay;
 
-        largeBooster.FindChild("BoosterIcon").GetComponent<Image>().color =
+        largeBooster.Find("BoosterIcon").GetComponent<Image>().color =
             Card.FindColor(cardsToDisplay[0].cardElement);
 
         largeBooster.GetComponent<Animator>().SetTrigger("Opening");

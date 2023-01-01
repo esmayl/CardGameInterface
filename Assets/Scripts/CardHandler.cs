@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CardHandler : MonoBehaviour
@@ -52,6 +53,8 @@ public class CardHandler : MonoBehaviour
         {
             ResetLocalVars();
         }
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void Start()
@@ -79,12 +82,12 @@ public class CardHandler : MonoBehaviour
        DisplayCards(GetCards(Element.All));
     }
 
-    void OnLevelWasLoaded(int level)
+    void OnSceneLoaded(Scene newScene,LoadSceneMode loadSceneMode)
     {
 
-        if (level != 0)
+        if (newScene.buildIndex != 0)
         {
-            moneyTextField = GameObject.Find("Money").transform.FindChild("MoneyText").GetComponent<Text>();
+            moneyTextField = GameObject.Find("Money").transform.Find("MoneyText").GetComponent<Text>();
             moneyTextField.text = "" + this.money;
             return;
         }
@@ -299,7 +302,7 @@ public class CardHandler : MonoBehaviour
     void LoadAllCards()
     {
 
-        if (Application.isWebPlayer)
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
         {
 
             TextAsset cardFile = Resources.Load<TextAsset>("Data/CardData/cards");

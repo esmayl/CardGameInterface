@@ -135,19 +135,14 @@ public class Card : MonoBehaviour
         {
             case Element.Earth:
                 return Color.white;
-                break;
             case Element.Lightning:
                 return Color.yellow;
-                break;
             case Element.Water:
                 return Color.cyan;
-                break;
             case Element.Fire:
                 return Color.red;
-                break;
             default:
                 return Color.white;
-                break;
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class InputHandler : MonoBehaviour
 {
@@ -62,7 +63,7 @@ public class InputHandler : MonoBehaviour
 
                 //used to show right cards per filter
 
-                if (hit.gameObject.CompareTag("Filter") && Application.loadedLevelName == "Collection")
+                if (hit.gameObject.CompareTag("Filter") && SceneManager.GetActiveScene().name == "Collection")
                 {
                     GetComponent<AudioSource>().Play();
 
@@ -89,7 +90,7 @@ public class InputHandler : MonoBehaviour
                     return;
                 }
 
-                if (hit.gameObject.CompareTag("Filter") && Application.loadedLevelName == "Store")
+                if (hit.gameObject.CompareTag("Filter") && SceneManager.GetActiveScene().name == "Store")
                 {
 
                     GetComponent<AudioSource>().Play();
@@ -127,7 +128,7 @@ public class InputHandler : MonoBehaviour
                     //make camera fade to black
                     GetComponent<AudioSource>().Play();
 
-                    Application.LoadLevel("Store");
+                    SceneManager.LoadScene("Store");
                     return;
                 }
 
@@ -135,11 +136,11 @@ public class InputHandler : MonoBehaviour
                 {
                     GetComponent<AudioSource>().Play();
 
-                    Application.LoadLevel("Collection");
+                    SceneManager.LoadScene("Collection");
                     return;
                 }
 
-                if (hit.gameObject.CompareTag("Background") && Application.loadedLevelName == "Collection")
+                if (hit.gameObject.CompareTag("Background") && SceneManager.GetActiveScene().name == "Collection")
                 {
                     CardHandler.instance.UnsetLargeCard();
                     return;

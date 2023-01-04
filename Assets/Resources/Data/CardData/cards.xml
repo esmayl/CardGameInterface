@@ -1,26 +1,32 @@
-<?xml version="1.0" encoding="Windows-1252"?>
-<XMLTemplate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<?xml version="1.0"?>
+<XMLTemplate xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Cards>
+    <name />
+    <hideFlags>None</hideFlags>
     <iconSmallName>SmallIcon</iconSmallName>
     <iconMediumName>MediumIcon</iconMediumName>
     <iconLargeName>LargeIcon</iconLargeName>
     <ElementType>Fire</ElementType>
     <CardCost>5,15</CardCost>
-    <CardText>Lots of text jnsfnjsjjdfjkfgkjdfgnjkngjsgnndgjngisengskejgnskejfngskjbgekjgnskjeefjnsdfnejfnjdngskjdgnsfn</CardText>
+    <CardText>Burns all the cards on the field</CardText>
     <Rarity>Uncommon</Rarity>
-    <CardName>Card0</CardName>
+    <CardName>Flame on!</CardName>
   </Cards>
   <Cards>
+    <name />
+    <hideFlags>None</hideFlags>
     <iconSmallName>SmallIcon</iconSmallName>
     <iconMediumName>MediumIcon</iconMediumName>
     <iconLargeName>LargeIcon</iconLargeName>
     <ElementType>Earth</ElementType>
     <CardCost>1,25</CardCost>
-    <CardText>fdfgjdfdfhbdg</CardText>
+    <CardText>Shakes the playing field</CardText>
     <Rarity>Common</Rarity>
-    <CardName>Card1</CardName>
+    <CardName>Earthshaker</CardName>
   </Cards>
   <Cards>
+    <name />
+    <hideFlags>None</hideFlags>
     <iconSmallName>SmallIcon</iconSmallName>
     <iconMediumName>MediumIcon</iconMediumName>
     <iconLargeName>LargeIcon</iconLargeName>
@@ -31,6 +37,8 @@
     <CardName>Card2</CardName>
   </Cards>
   <Cards>
+    <name />
+    <hideFlags>None</hideFlags>
     <iconSmallName>SmallIcon</iconSmallName>
     <iconMediumName>MediumIcon</iconMediumName>
     <iconLargeName>LargeIcon</iconLargeName>
@@ -41,6 +49,8 @@
     <CardName>Card3</CardName>
   </Cards>
   <Cards>
+    <name />
+    <hideFlags>None</hideFlags>
     <iconSmallName>SmallIcon</iconSmallName>
     <iconMediumName>MediumIcon</iconMediumName>
     <iconLargeName>LargeIcon</iconLargeName>
@@ -51,6 +61,8 @@
     <CardName>Card4</CardName>
   </Cards>
   <Cards>
+    <name />
+    <hideFlags>None</hideFlags>
     <iconSmallName>SmallIcon</iconSmallName>
     <iconMediumName>MediumIcon</iconMediumName>
     <iconLargeName>LargeIcon</iconLargeName>
@@ -61,6 +73,8 @@
     <CardName>Card5</CardName>
   </Cards>
   <Cards>
+    <name />
+    <hideFlags>None</hideFlags>
     <iconSmallName>SmallIcon</iconSmallName>
     <iconMediumName>MediumIcon</iconMediumName>
     <iconLargeName>LargeIcon</iconLargeName>
@@ -71,6 +85,8 @@
     <CardName>Card6</CardName>
   </Cards>
   <Cards>
+    <name />
+    <hideFlags>None</hideFlags>
     <iconSmallName>SmallIcon</iconSmallName>
     <iconMediumName>MediumIcon</iconMediumName>
     <iconLargeName>LargeIcon</iconLargeName>
@@ -81,6 +97,8 @@
     <CardName>Card7</CardName>
   </Cards>
   <Cards>
+    <name />
+    <hideFlags>None</hideFlags>
     <iconSmallName>SmallIcon</iconSmallName>
     <iconMediumName>MediumIcon</iconMediumName>
     <iconLargeName>LargeIcon</iconLargeName>
@@ -91,6 +109,8 @@
     <CardName>Card8</CardName>
   </Cards>
   <Cards>
+    <name />
+    <hideFlags>None</hideFlags>
     <iconSmallName>SmallIcon</iconSmallName>
     <iconMediumName>MediumIcon</iconMediumName>
     <iconLargeName>LargeIcon</iconLargeName>
@@ -101,6 +121,8 @@
     <CardName>Card9</CardName>
   </Cards>
   <Cards>
+    <name />
+    <hideFlags>None</hideFlags>
     <iconSmallName>SmallIcon</iconSmallName>
     <iconMediumName>MediumIcon</iconMediumName>
     <iconLargeName>LargeIcon</iconLargeName>
@@ -111,6 +133,8 @@
     <CardName>Card10</CardName>
   </Cards>
   <Cards>
+    <name />
+    <hideFlags>None</hideFlags>
     <iconSmallName>SmallIcon</iconSmallName>
     <iconMediumName>MediumIcon</iconMediumName>
     <iconLargeName>LargeIcon</iconLargeName>
